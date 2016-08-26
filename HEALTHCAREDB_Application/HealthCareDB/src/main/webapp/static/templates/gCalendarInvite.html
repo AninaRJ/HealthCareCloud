@@ -1,52 +1,61 @@
 <div>
 	<form>
 		<md-content layout-padding>
-    		<div layout-gt-xs="row">
-				<div ng-show="!loggedIntoGoogle">
-					<md-button class="md-primary md-raised" ng-click="login()">Login To Google</md-button>
+			<div ng-show="!loggedIntoGoogle">
+				<md-button class="md-primary md-raised" ng-click="login()">Login To Google</md-button>
+			</div>
+		<div ng-show="loggedIntoGoogle" class="green">
+			<section>
+				<md-subheader class="md-primary"><h2>Schedule an appointment</h2></md-subheader>
+				<div layout-gt-xs="row">
+					<md-input-container>
+						<label>Calendar:</label>
+						<md-select ng-model="selectedCalendar"> <md-option
+							ng-repeat="calendar in calendars" ng-value="calendar">{{calendar.summary}}</md-option>
+						</md-select>
+					</md-input-container>
 				</div>
-			</div>
-			
-		<div ng-show="loggedIntoGoogle">
-			<md-input-container>
-			<div layout-gt-xs="row">
-				<div flex-gt-xs>
-					<label>Calendar:</label>
-					<md-select ng-model="selectedCalendar"> <md-option
-						ng-repeat="calendar in calendars" ng-value="calendar">{{calendar.summary}}</md-option>
-					</md-select>
+	
+				<div layout-gt-xs="row">			
+					<md-input-container>
+						<label>Attendees:</label> 
+						<input type="email" ng-model="attendees" />
+					</md-input-container>
 				</div>
-			</div>
-			</md-input-container>
-			
-			<div layout-gt-xs="row">
-				<label>Attendees:</label> 
-				<input type="text" ng-model="attendees" />
-			</div>
-			
-		    <div layout-gt-xs="row">
-				<label>Start Date</label>
-				<md-datepicker ng-model="eventStartDate"></md-datepicker>
-			</div>
-			<!-- Time can be made a dropdown of values -->
-			<div layout-gt-xs="row">
-				<label>Start Time:</label> 
-				<input type="text" ng-model="eventStartTime" />
-			</div>
-			
-			<div layout-gt-xs="row">
-				<label>End Date</label>
-				<md-datepicker ng-model="eventEndDate"></md-datepicker>
-			</div>
-			
-			<div layout-gt-xs="row">
-				<label>End Time:</label> <input type="text" ng-model="eventEndTime" />
-			</div>
-			
-			<div layout-gt-xs="row">
-				<md-button class="md-primary md-raised" ng-click="addEvent()"
-					ng-disabled="!selectedCalendar">Create</md-button>
-			</div>
+				
+			    <div layout-gt-xs="row">
+			    	<div flex-gt-xs>
+					<label>Start Date</label>
+					<md-datepicker ng-model="eventStartDate"></md-datepicker>
+					</div>
+				</div>
+				<!-- Time can be made a dropdown of values -->
+				<div layout-gt-xs="row">
+					<md-input-container>
+						<label>Start Time:</label> 
+						<input type="text" ng-model="eventStartTime" />
+					</md-input-container>
+				</div>
+				
+				<div layout-gt-xs="row">
+					<div flex-gt-xs>
+						<label>End Date</label>
+						<md-datepicker ng-model="eventEndDate"></md-datepicker>
+					</div>
+				</div>
+		
+				<div layout-gt-xs="row">		
+					<md-input-container>
+						<label>End Time:</label> <input type="text" ng-model="eventEndTime" />
+					</md-input-container>
+				</div>				
+				
+				<div layout-gt-xs="row">
+					<md-button class="md-primary md-raised" ng-click="addEvent()"
+						ng-disabled="!selectedCalendar">Create</md-button>
+				</div>
+			</section>
 		</div>
+		</md-content>
 	</form>
 </div>

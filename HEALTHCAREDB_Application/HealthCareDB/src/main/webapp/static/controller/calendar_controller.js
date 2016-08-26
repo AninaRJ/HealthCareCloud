@@ -22,10 +22,10 @@ hccApp.controller('CalendarController',['$scope', 'googleLogin', 'googleCalendar
     $scope.addEvent = function() {
         var self = this;
         // date : '2016-08-28T09:00:00'
-        var timeString = (($scope.eventStartTime).toString().endsWith("AM")? ($scope.eventStartTime).toString().split(" ")[0] + ":00" : ($scope.eventStartTime).toString().split(" ")[0] + ":00");
+        var timeString = $scope.formatTime($scope.eventStartTime);//(($scope.eventStartTime).toString().endsWith("AM")? ($scope.eventStartTime).toString().split(" ")[0] + ":00" : ($scope.eventStartTime).toString().split(" ")[0] + ":00");
         self.startDate = moment(self.eventStartDate).toISOString().split("T")[0] + "T" + timeString
         
-        timeString = (($scope.eventEndTime).toString().endsWith("AM")? ($scope.eventEndTime).toString().split(" ")[0] + ":00" : ($scope.eventEndTime).toString().split(" ")[0] + ":00");
+        timeString =  $scope.formatTime($scope.eventEndTime);//(($scope.eventEndTime).toString().endsWith("AM")? ($scope.eventEndTime).toString().split(" ")[0] + ":00" : ($scope.eventEndTime).toString().split(" ")[0] + ":00");
         self.endDate = moment(self.eventEndDate).toISOString().split("T")[0] + "T" + timeString
         var event = {
         		  attendees: [{email: $scope.attendees}],
@@ -46,4 +46,15 @@ hccApp.controller('CalendarController',['$scope', 'googleLogin', 'googleCalendar
         });
 
     }	
+    
+    $scope.formatTime = function(timeString){
+    	if((timeString).toString().endsWith("AM")){
+    		// Morning appointment
+    		timeString = (timeString).toString().split("AM")[0].trim() + ":00"  
+    	}
+    	else{
+    		timeString = (timeString).toString().split("PM")[0].trim() + ":00" 
+    	}
+    	return timeString;
+    }
 }]);
