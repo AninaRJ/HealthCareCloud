@@ -26,27 +26,8 @@
 	<script src="<c:url value='/static/controller/calendar_controller.js' />"></script>
 	</head>
 	<body ng-app="hccApp">
-		<div ng-controller="CalendarController" class="md-padding" ng-cloak layout="column">
-			 <div>
-				  <form>
-				    <div ng-show="!loggedIntoGoogle">
-				    	<md-button class="md-primary md-raised" ng-click="login()">Login To Google</md-button>
-				    </div>
-				    <div ng-show="loggedIntoGoogle">
-				    <md-input-container>
-         				 <label>Calendar:</label>
-				    	<md-select ng-model="selectedCalendar">
-				    		<md-option ng-repeat="calendar in calendars" ng-value="calendar.summary" >{{calendar.summary}}</md-option>
-				    	</md-select>
-				    </md-input-container>
-				    </div>
-				    <label>Event Date</label>
-				    <md-datepicker ng-model="eventDate"></md-datepicker>
-				    <label>At:</label>
-				     <input type="time" ng-model="eventTime" />
-				    <md-button class="md-primary md-raised"  ng-click="addEvent()" ng-disabled="!selectedCalendar">Create</md-button>
-				  </form>
-			  </div>
-		</div>
+	<div ng-controller="CalendarController" class="md-padding" ng-cloak layout="column">
+		<google-appointment></google-appointment>
+	</div>
 	</body>
 </html>

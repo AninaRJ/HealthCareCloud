@@ -84,10 +84,11 @@ angular.module('googleApi', [])
 
         googleApiBuilder.afterClientLoaded(function() {
             gapi.client.load('calendar', 'v3', function() {
-
+            	gapi.client.setApiKey($rootScope.apiKey);
+            	
                 self.listCalendarColors = googleApiBuilder.build(gapi.client.calendar.colors.get);
 
-                self.createEvent = googleApiBuilder.build(gapi.client.calendar.events.quickAdd);
+                self.createEvent = googleApiBuilder.build(gapi.client.calendar.events.insert);
                 self.deleteEvent = googleApiBuilder.build(gapi.client.calendar.events.delete);
                 self.updateEvent = googleApiBuilder.build(gapi.client.calendar.events.update);
                 self.listEvents = googleApiBuilder.build(gapi.client.calendar.events.list, itemExtractor);
