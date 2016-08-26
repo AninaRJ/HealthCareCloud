@@ -22,7 +22,9 @@ hccApp.controller("SearchController", ['$scope', '$rootScope', function($scope, 
 		}	
 	];
 	
+	$scope.searchClicked = false;
+	
 	$scope.searchPatient = function(){
-		
+		$scope.searchClicked = true;
 	}
 }]);

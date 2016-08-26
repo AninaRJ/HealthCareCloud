@@ -20,7 +20,7 @@
 	        </div>
 	      </form>
 	      	<!-- Search Results -->
-	      <md-list flex>
+	      <md-list flex ng-show="searchClicked">
 	        <md-subheader class="md-no-sticky md-primary"><h3>Patient Information</h3></md-subheader>
 	        <md-list-item class="md-3-line" ng-repeat="patient in patientList" ng-click="null">
 	         <!--  <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" /> -->
