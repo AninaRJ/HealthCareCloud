@@ -16,7 +16,7 @@ var hccApp = angular.module("hccApp", ['ngMessages', 'ngMaterial', 'googleApi'])
     
     $mdThemingProvider.theme('default')
     .primaryPalette('blue')
-    .accentPalette('grey');
+    .accentPalette('deep-orange');
     
     $mdDateLocaleProvider.parseDate = function(dateString) {
 	    var m = moment(dateString, 'L', true);

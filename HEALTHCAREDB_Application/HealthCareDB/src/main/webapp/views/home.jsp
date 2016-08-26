@@ -28,14 +28,53 @@
 	<body ng-app="hccApp">
 	<md-toolbar class="md-primary">
  	</md-toolbar>
-  	
-	<div ng-controller="CalendarController" class="md-padding" ng-cloak layout="column" style="float: right">
-		<div ng-show="!loggedIntoGoogle">
-			<md-button class="md-primary md-raised" ng-click="login()">Google Sign-In</md-button>
+  	<md-content class="md-padding">
+  		<div ng-controller="CalendarController" class="md-padding" ng-cloak layout="column" style="float: right">
+			<div ng-show="!loggedIntoGoogle">
+				<md-button class="md-primary md-raised" ng-click="login()">Google Sign-In</md-button>
+				 <md-tooltip md-direction="bottom">
+		          Login to google directly schedule an appointment for a known patient.
+		        </md-tooltip>
+			</div>
+			<div ng-show="loggedIntoGoogle">
+				<md-button class="md-primary md-raised" ng-click="displayAppointmentWindow()">Schedule Appointment</md-button>
+				 <md-tooltip md-direction="bottom">
+		          Schedule an appointment directly without searching. (If you know the patient's email)
+		        </md-tooltip>
+			</div>
 		</div>
-		<div ng-show="loggedIntoGoogle">
-			<md-button class="md-primary md-raised" ng-click="displayAppointmentWindow()">Schedule Appointment</md-button>
-		</div>
-	</div>
+	  	 <md-tabs md-dynamic-height md-border-bottom>
+	  	 <md-tab label="Home">
+	        <md-content class="md-padding">
+	        </md-content>
+	      </md-tab>
+	      <md-tab label="Search Patient">
+	        <md-content class="md-padding">
+	        </md-content>
+	      </md-tab>
+	      <md-tab label="Recent Patient">
+	        <md-content class="md-padding">
+	        </md-content>
+	      </md-tab>
+	      <md-tab label="Scheduled Appointments">
+	        <md-content class="md-padding">
+	        	<md-calendar ng-model="birthday"></md-calendar>
+	        </md-content>
+	      </md-tab>
+	      <md-tab label="My Profile">
+	        <md-content class="md-padding">
+	        </md-content>
+	      </md-tab>
+	    </md-tabs>
+	    <!-- <md-nav-bar md-selected-nav-item="page1" nav-bar-aria-label="navigation links">
+	      <md-nav-item md-nav-click="goto('page1')" name="page1">Search Patient</md-nav-item>
+	      <md-nav-item md-nav-click="goto('page2')" name="page2">Recent Patient</md-nav-item>
+	      <md-nav-item md-nav-click="goto('page3')" name="page3">Scheduled Appointments</md-nav-item>
+	      <md-nav-item md-nav-click="goto('page4')" name="page4">My Profile</md-nav-item>
+	    </md-nav-bar>
+	    <div class="ext-content">
+	      External content for `<span>{{currentNavItem}}</span>`
+	    </div> -->
+	</md-content>
 	</body>
 </html>
