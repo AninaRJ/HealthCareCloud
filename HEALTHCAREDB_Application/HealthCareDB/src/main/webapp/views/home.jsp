@@ -24,6 +24,7 @@
 	<script src="https://apis.google.com/js/client.js?onload=googleClientLoaded"></script>
 	<script src="<c:url value='/static/app.js' />"></script>
 	<script src="<c:url value='/static/controller/calendar_controller.js' />"></script>
+	<script src="<c:url value='/static/controller/search_controller.js' />"></script>
 	</head>
 	<body ng-app="hccApp">
 	<md-toolbar class="md-primary">
@@ -50,7 +51,7 @@
 	      </md-tab>
 	      <md-tab label="Search Patient">
 	        <md-content class="md-padding">
-	        	<div ng-include="'views/searchPatient.jsp'"></div>
+	        	<div ng-include="'searchPatient.jsp'"></div>
 	        </md-content>
 	      </md-tab>
 	      <md-tab label="Recent Patient">
