@@ -1,12 +1,7 @@
-<div>
-	<form>
+<div class="md-padding" ng-cloak layout="column">
+	<form style="Width: 400px; overflow-x: hidden;'">
 		<md-content layout-padding>
-			<div ng-show="!loggedIntoGoogle">
-				<md-button class="md-primary md-raised" ng-click="login()">Login To Google</md-button>
-			</div>
-		<div ng-show="loggedIntoGoogle" class="green">
-			<section>
-				<md-subheader class="md-primary"><h2>Schedule an appointment</h2></md-subheader>
+				<md-subheader class="md-primary" style="text-align: center;"><h2>Schedule an appointment</h2></md-subheader>
 				<div layout-gt-xs="row">
 					<md-input-container>
 						<label>Calendar:</label>
@@ -53,9 +48,8 @@
 				<div layout-gt-xs="row">
 					<md-button class="md-primary md-raised" ng-click="addEvent()"
 						ng-disabled="!selectedCalendar">Create</md-button>
+					<md-button class="md-primary md-raised" ng-click="cancelEvent()">Cancel</md-button>
 				</div>
-			</section>
-		</div>
 		</md-content>
 	</form>
 </div>

@@ -27,10 +27,3 @@ var hccApp = angular.module("hccApp", ['ngMessages', 'ngMaterial', 'googleApi'])
 	    return m.isValid() ? m.format('L') : '';
 	  };
 });
-
-hccApp.directive('googleAppointment', function($rootScope){
-	return{
-		restrict: 'E',
-		templateUrl:  $rootScope.contextRoot + 'static/templates/gCalendarInvite.html' 
-	};
-});

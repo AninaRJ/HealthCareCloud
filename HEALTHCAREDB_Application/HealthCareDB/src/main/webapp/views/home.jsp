@@ -23,36 +23,19 @@
 	</script>
 	<script src="https://apis.google.com/js/client.js?onload=googleClientLoaded"></script>
 	<script src="<c:url value='/static/app.js' />"></script>
-	<script src="<c:url value='/static/controller/login_controller.js' />"></script>
+	<script src="<c:url value='/static/controller/calendar_controller.js' />"></script>
 	</head>
-	<body ng-app="hccApp" ng-controller="LoginController">
+	<body ng-app="hccApp">
 	<md-toolbar class="md-primary">
-	      <!-- <img ng-src="{{$root.contextRoot}}/static/images/hccIcon.png" height="60px" width="80px"></img> 
-	      <h2 class="md-flex">HealthCare Cloud</h2>-->
  	</md-toolbar>
-  	<md-content flex layout-padding>
-  		<md-subheader class="md-primary">
-  			<h2>
-  			Welcome to HealthCare Cloud!
-  			</h2>
-  			<md-card md-colors="::{backgroundColor: '{{theme}}-primary-700'}">
-			  <md-card-title>
-			    <md-card-title-text>
-			      <span class="md-headline">What is it?</span>
-			      <span class="md-subhead description">HealthCare Cloud is a centralised hub for hospitals to track and store patient history and be able to
-			      quickly diagnose without lags between differing providers, when required. 
-			      <br/>
-			      A common structure is supported to handle patient data.</span>
-			    </md-card-title-text>
-			  </md-card-title>
-			</md-card>
-			
-			<md-button class="md-primary md-raised" ng-click="validateUser()" style="float:right">Login</md-button>
-  		</md-subheader> 
-  	</md-content>
   	
-	<!-- <div ng-controller="CalendarController" class="md-padding" ng-cloak layout="column">
-		<google-appointment></google-appointment>
-	</div> -->
+	<div ng-controller="CalendarController" class="md-padding" ng-cloak layout="column" style="float: right">
+		<div ng-show="!loggedIntoGoogle">
+			<md-button class="md-primary md-raised" ng-click="login()">Google Sign-In</md-button>
+		</div>
+		<div ng-show="loggedIntoGoogle">
+			<md-button class="md-primary md-raised" ng-click="displayAppointmentWindow()">Schedule Appointment</md-button>
+		</div>
+	</div>
 	</body>
 </html>
