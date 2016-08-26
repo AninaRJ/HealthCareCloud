@@ -50,6 +50,7 @@
 	      </md-tab>
 	      <md-tab label="Search Patient">
 	        <md-content class="md-padding">
+	        	<div ng-include="'views/searchPatient.jsp'"></div>
 	        </md-content>
 	      </md-tab>
 	      <md-tab label="Recent Patient">
