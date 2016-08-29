@@ -1,53 +1,66 @@
 <div class="md-padding" ng-cloak layout="column">
-	<form style="Width: 400px; overflow-x: hidden;'">
+	<form style="Width: 400px; overflow-x: hidden;'" name="calendarForm">
 		<md-content layout-padding>
 				<md-subheader class="md-primary" style="text-align: center;"><h2>Schedule an appointment</h2></md-subheader>
 				<div layout-gt-xs="row">
 					<md-input-container>
 						<label>Calendar:</label>
-						<md-select ng-model="selectedCalendar"> <md-option
+						<md-select ng-model="selectedCalendar" ng-required="true" name="calApt"> <md-option
 							ng-repeat="calendar in calendars" ng-value="calendar">{{calendar.summary}}</md-option>
 						</md-select>
+						<div ng-messages="calendarForm.calApt.$error">
+							<div ng-message="required">This field is required.</div>
+						</div>
 					</md-input-container>
 				</div>
 	
 				<div layout-gt-xs="row">			
 					<md-input-container>
 						<label>Patient():</label> 
-						<input type="email" ng-model="attendees" />
+						<input type="email" ng-model="attendees" name="patientEmail" ng-required="true"/>
+						<div ng-messages="calendarForm.patientEmail.$error">
+							<div ng-message="required">This field is required.</div>
+							<div ng-message="email">Please enter a valid email.</div>
+						</div>
 					</md-input-container>
 				</div>
 				
 			    <div layout-gt-xs="row">
 			    	<div flex-gt-xs>
 					<label>Start Date</label>
-					<md-datepicker ng-model="eventStartDate"></md-datepicker>
+					<md-datepicker ng-required="true" ng-model="eventStartDate" name="startDate"></md-datepicker>
 					</div>
 				</div>
 				<!-- Time can be made a dropdown of values -->
 				<div layout-gt-xs="row">
 					<md-input-container>
 						<label>Start Time:</label> 
-						<input type="text" ng-model="eventStartTime" />
+						<input type="text" name="startTime" ng-required="true" ng-model="eventStartTime" />
+						<div ng-messages="calendarForm.startTime.$error">
+							<div ng-message="required">This field is required.</div>
+						</div>
 					</md-input-container>
 				</div>
 				
 				<div layout-gt-xs="row">
 					<div flex-gt-xs>
 						<label>End Date</label>
-						<md-datepicker ng-model="eventEndDate"></md-datepicker>
+						<md-datepicker ng-required="true" name="endDate" ng-model="eventEndDate"></md-datepicker>
 					</div>
 				</div>
 		
 				<div layout-gt-xs="row">		
 					<md-input-container>
-						<label>End Time:</label> <input type="text" ng-model="eventEndTime" />
+						<label>End Time:</label> <input name="endTime" ng-required="true" type="text" ng-model="eventEndTime" />
+						<div ng-messages="calendarForm.endTime.$error">
+							<div ng-message="required">This field is required.</div>
+						</div>
 					</md-input-container>
 				</div>				
 				
 				<div layout-gt-xs="row">
 					<md-button class="md-primary md-raised" ng-click="addEvent()"
-						ng-disabled="!selectedCalendar">Create</md-button>
+						ng-disabled="!(selectedCalendar && !calendarForm.isValid)">Create</md-button>
 					<md-button class="md-primary md-raised" ng-click="cancelEvent()">Cancel</md-button>
 				</div>
 		</md-content>

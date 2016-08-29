@@ -4,6 +4,9 @@
 
 hccApp.controller('CalendarController',['$scope', 'googleLogin', 'googleCalendar', '$mdDialog', '$rootScope', function($scope, googleLogin, googleCalendar, $mdDialog, $rootScope){
 	$scope.loggedIntoGoogle = false;
+	$scope.calendarDate = '';
+	$scope.eventsAvailable = false;
+	$scope.aptList = [];
 	
 	$scope.login = function () {
         googleLogin.login().then(function() { $scope.loggedIntoGoogle = true; $scope.displayAppointmentWindow()}, function() { $scope.loggedIntoGoogle = false; console.error("failed login")});
@@ -96,5 +99,33 @@ hccApp.controller('CalendarController',['$scope', 'googleLogin', 'googleCalendar
     		timeString = hours + ":" + (timeString).toString().split(":")[1] + ":" + (timeString).toString().split(":")[2]
     	}
     	return timeString;
+    }
+    
+    $scope.fetchAppointments = function(){
+    	var timeMin = moment($scope.calendarDate).add(1, 'days').toISOString().split("T")[0] + "T00:00:00Z";
+    	var timeMax = moment($scope.calendarDate).add(2, 'days').toISOString().split("T")[0] + "T00:00:00Z";
+
+    	googleCalendar.listEvents({
+            'calendarId': 'primary',
+            'timeMin': timeMin,
+            'timeMax': timeMax
+        }).then(function(events) {
+           $scope.aptList = [];
+           $scope.eventsAvailable = false;
+           for(var i =0; i<events.length; i++){
+        	   var appointment = {
+        				id: events[i].id,
+        				patientEmail: events[i].attendees[0].email,
+        				start: moment(events[i].start.dateTime).calendar(),
+        				end: moment(events[i].end.dateTime).calendar()
+        		}
+        	  $scope.aptList.push(appointment);
+        	  if(!$scope.eventsAvailable){
+        		  $scope.eventsAvailable = true;
+        	  }
+           }
+        }, function(error) {
+            $scope.eventCreationError = error;
+        });
     }
 }]);

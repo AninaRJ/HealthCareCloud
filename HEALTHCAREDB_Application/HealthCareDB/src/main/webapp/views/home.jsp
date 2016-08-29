@@ -16,6 +16,8 @@
 	<!-- Google Script -->
 	<script src="<c:url value='/static/js/angular-googleapi.js' />"></script>
 	<script src="<c:url value='/static/js/moment.js' />"></script>
+	<script src="<c:url value='/static/js/md-data-table.js' />"></script>
+	<script src="<c:url value='/static/js/md-data-table-templates.js' />"></script>
 		<script>
 	  function googleClientLoaded() {
 	    gapi.auth.init(function () { });
@@ -60,7 +62,7 @@
 	      </md-tab>
 	      <md-tab label="Scheduled Appointments">
 	        <md-content class="md-padding">
-	        	<md-calendar ng-model="birthday"></md-calendar>
+	        	<div ng-include="'scheduledAppointments.jsp'"></div>
 	        </md-content>
 	      </md-tab>
 	      <md-tab label="My Profile">
