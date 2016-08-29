@@ -27,6 +27,7 @@
 	<script src="<c:url value='/static/app.js' />"></script>
 	<script src="<c:url value='/static/controller/calendar_controller.js' />"></script>
 	<script src="<c:url value='/static/controller/search_controller.js' />"></script>
+	<script src="<c:url value='/static/controller/register_controller.js' />"></script>
 	</head>
 	<body ng-app="hccApp">
 	<md-toolbar class="md-primary">
@@ -47,8 +48,9 @@
 			</div>
 		</div>
 	  	 <md-tabs md-dynamic-height md-border-bottom>
-	  	 <md-tab label="Home">
+	  	 <md-tab label="Register a Patient">
 	        <md-content class="md-padding">
+	        	<div ng-include="'registerPatient.jsp'"></div>
 	        </md-content>
 	      </md-tab>
 	      <md-tab label="Search Patient">

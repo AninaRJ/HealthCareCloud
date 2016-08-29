@@ -9,7 +9,7 @@ hccApp.controller('CalendarController',['$scope', 'googleLogin', 'googleCalendar
 	$scope.aptList = [];
 	
 	$scope.login = function () {
-        googleLogin.login().then(function() { $scope.loggedIntoGoogle = true; $scope.displayAppointmentWindow()}, function() { $scope.loggedIntoGoogle = false; console.error("failed login")});
+        googleLogin.login().then(function() { $scope.loggedIntoGoogle = true; $scope.displayAppointmentWindow(); }, function() { $scope.loggedIntoGoogle = false; console.error("failed login")});
     };
     
     $scope.$on("googleCalendar:loaded", function() {
@@ -117,7 +117,8 @@ hccApp.controller('CalendarController',['$scope', 'googleLogin', 'googleCalendar
         				id: events[i].id,
         				patientEmail: events[i].attendees[0].email,
         				start: moment(events[i].start.dateTime).calendar(),
-        				end: moment(events[i].end.dateTime).calendar()
+        				end: moment(events[i].end.dateTime).calendar(),
+        				eventLink: events[i].htmlLink
         		}
         	  $scope.aptList.push(appointment);
         	  if(!$scope.eventsAvailable){
@@ -127,5 +128,27 @@ hccApp.controller('CalendarController',['$scope', 'googleLogin', 'googleCalendar
         }, function(error) {
             $scope.eventCreationError = error;
         });
+    }
+    
+    $scope.deleteAppointment = function(eventId){
+    	googleCalendar.deleteEvent({
+    		'calendarId' : 'primary',
+    		'eventId' : eventId 
+    	}).then(function(events) {
+    		 $mdDialog.show(
+				      $mdDialog.alert()
+				        .parent(angular.element(document.body))
+				        .clickOutsideToClose(false)
+				        .title('Successfully deleted!')
+				        .textContent('The appointment has been deleted successfully.')
+				        .ariaLabel('Session Timedout!')
+				        .ok('OK')
+				    ).then(function() {
+				    	$scope.cancelEvent();
+				    });
+    		 $scope.fetchAppointments();
+         }, function(error) {
+             $scope.eventCreationError = error;
+         });
     }
 }]);

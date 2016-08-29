@@ -1,5 +1,8 @@
 <div ng-controller="SearchController">
 	<md-content>
+		<md-subheader class="md-primary md-accent">
+			<h2>Search a new Patient</h2>
+		</md-subheader>
 		 <form name="searchForm">
 	        <div layout-gt-sm="row">
 	          <md-input-container flex-gt-sm>
