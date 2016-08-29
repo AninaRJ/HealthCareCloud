@@ -1,12 +1,13 @@
 <div ng-controller="CalendarController">
-	<md-subheader class="md-primary md-accent">
+	<md-subheader class="md-primary md-accent" flex="50" style="float: left">
 			<h2>Check appointments scheduled</h2>
+			<div>
+				<md-calendar ng-model="calendarDate" ng-change="fetchAppointments()"></md-calendar>
+			</div>
 	</md-subheader>
-	<div style="float: left">
-		<md-calendar ng-model="calendarDate" ng-change="fetchAppointments()"></md-calendar>
-	</div>
-	<md-content>
-	      <md-list flex ng-show="eventsAvailable">
+	
+	<md-content flex="50">
+	      <md-list ng-show="eventsAvailable">
 	        <md-subheader class="md-no-sticky md-primary"><h3>Scheduled Appointments</h3></md-subheader>
 	        <md-list-item class="md-3-line " ng-repeat="appointment in aptList track by $index" ng-click="null">
 	          <div class="md-list-item-text" layout="column">

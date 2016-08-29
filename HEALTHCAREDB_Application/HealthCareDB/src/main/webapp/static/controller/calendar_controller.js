@@ -9,7 +9,7 @@ hccApp.controller('CalendarController',['$scope', 'googleLogin', 'googleCalendar
 	$scope.aptList = [];
 	
 	$scope.login = function () {
-        googleLogin.login().then(function() { $scope.loggedIntoGoogle = true; $scope.displayAppointmentWindow(); }, function() { $scope.loggedIntoGoogle = false; console.error("failed login")});
+        googleLogin.login().then(function() { $scope.loggedIntoGoogle = true; $scope.displayAppointmentWindow(); if($scope.calendarDate){$scope.fetchAppointments();}}, function() { $scope.loggedIntoGoogle = false; console.error("failed login")});
     };
     
     $scope.$on("googleCalendar:loaded", function() {

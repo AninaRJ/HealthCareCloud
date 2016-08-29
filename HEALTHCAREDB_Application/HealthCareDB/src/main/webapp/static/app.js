@@ -1,7 +1,7 @@
 /**
  * http://usejsdoc.org/
  */
-var hccApp = angular.module("hccApp", ['ngMessages', 'ngMaterial', 'googleApi']).run(function($rootScope) {
+var hccApp = angular.module("hccApp", ['ngMessages', 'ngMaterial', 'googleApi', 'material.components.expansionPanels']).run(function($rootScope) {
 	/*if (location.protocol != 'https:') {
 		location.protocol = 'https:';
 	}*/

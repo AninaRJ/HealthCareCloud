@@ -6,18 +6,18 @@
 	<title>Health Care Cloud</title>
 	<meta name="google-signin-client_id" content="1035365942198-a6n1gvb87pdetflppdd1a2qav41lufsd.apps.googleusercontent.com">
 	<link rel="SHORTCUT ICON" href="<c:url value='/static/images/hccIcon.ico' />">
-	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.0/angular-material.min.css">
+	<link rel="stylesheet" href="<c:url value='/static/css/md-expansion-panel.min.css' />">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.1/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.1/angular-messages.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.0/angular-material.min.js"></script>
 	<!-- Google Script -->
 	<script src="<c:url value='/static/js/angular-googleapi.js' />"></script>
 	<script src="<c:url value='/static/js/moment.js' />"></script>
-	<script src="<c:url value='/static/js/md-data-table.js' />"></script>
-	<script src="<c:url value='/static/js/md-data-table-templates.js' />"></script>
+	<script src="<c:url value='/static/js/md-expansion-panel.min.js' />"></script>
 		<script>
 	  function googleClientLoaded() {
 	    gapi.auth.init(function () { });
@@ -28,6 +28,12 @@
 	<script src="<c:url value='/static/controller/calendar_controller.js' />"></script>
 	<script src="<c:url value='/static/controller/search_controller.js' />"></script>
 	<script src="<c:url value='/static/controller/register_controller.js' />"></script>
+	<style>
+		.navBardemoBasicUsage md-content .ext-content {
+  padding: 50px;
+  margin: 20px;
+  background-color: #FFF2E0; }
+	</style>
 	</head>
 	<body ng-app="hccApp">
 	<md-toolbar class="md-primary">
@@ -58,10 +64,10 @@
 	        	<div ng-include="'searchPatient.jsp'"></div>
 	        </md-content>
 	      </md-tab>
-	      <md-tab label="Recent Patient">
+	    <!--   <md-tab label="Recent Patient">
 	        <md-content class="md-padding">
 	        </md-content>
-	      </md-tab>
+	      </md-tab> -->
 	      <md-tab label="Scheduled Appointments">
 	        <md-content class="md-padding">
 	        	<div ng-include="'scheduledAppointments.jsp'"></div>

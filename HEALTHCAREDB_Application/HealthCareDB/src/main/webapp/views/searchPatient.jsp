@@ -1,5 +1,5 @@
 <div ng-controller="SearchController">
-	<md-content>
+	<md-content ng-show="!detailPage">
 		<md-subheader class="md-primary md-accent">
 			<h2>Search a new Patient</h2>
 		</md-subheader>
@@ -31,12 +31,96 @@
 	            <h3>{{patient.name}}</h3>
 	            <h4>{{patient.summary}}</h4>
 	            <p>{{patient.history}}</p>
-	             <md-button class="md-secondary md-warn">
+	             <md-button class="md-secondary md-warn" ng-click="displayDetails()">
 				    View Details
 				  </md-button>
 	          </div>
 	          <md-divider ng-if="!$last"></md-divider>
 	        </md-list-item>
 	      </md-list>
+	</md-content>
+	
+	<!-- Detail section -->
+	<md-content ng-show="detailPage">
+	<md-expansion-panel-group md-component-id="detailPanelGroup">
+		  
+		 <md-expansion-panel md-component-id="generalPanel">
+ 
+		  <md-expansion-panel-collapsed class=" md-primary">
+		    <div class="md-title">General Information</div>
+		    <div class="md-summary">Handles contact information too</div>
+		    <md-expansion-panel-icon></md-expansion-panel-icon>
+		  </md-expansion-panel-collapsed>
+		  <md-expansion-panel-expanded>
+		    <md-expansion-panel-header>
+		      <div class="md-title">General Information</div>
+		      <div class="md-summary">View general info</div>
+		      <md-expansion-panel-icon></md-expansion-panel-icon>
+		    </md-expansion-panel-header>
+		    <md-expansion-panel-content>
+		      <h4>General Info Content</h4>
+		      <p>Put content in here</p>
+		    </md-expansion-panel-content>
+		    <md-expansion-panel-footer>
+		      <div flex></div>
+		      <md-button class="md-warn" ng-click="$panel.collapse()">Collapse</md-button>
+		    </md-expansion-panel-footer>
+		 
+		  </md-expansion-panel-expanded>
+		 
+		</md-expansion-panel>
+		
+		 <md-expansion-panel md-component-id="medicalPanel">
+ 
+		  <md-expansion-panel-collapsed>
+		    <div class="md-title">Medical Information</div>
+		    <div class="md-summary"></div>
+		    <md-expansion-panel-icon></md-expansion-panel-icon>
+		  </md-expansion-panel-collapsed>
+		  <md-expansion-panel-expanded>
+		    <md-expansion-panel-header>
+		      <div class="md-title">Medical Information</div>
+		      <div class="md-summary">View general info</div>
+		      <md-expansion-panel-icon></md-expansion-panel-icon>
+		    </md-expansion-panel-header>
+		    <md-expansion-panel-content>
+		      <h4>General Info Content</h4>
+		      <p>Put content in here</p>
+		    </md-expansion-panel-content>
+		    <md-expansion-panel-footer>
+		      <div flex></div>
+		      <md-button class="md-warn" ng-click="$panel.collapse()">Collapse</md-button>
+		    </md-expansion-panel-footer>
+		 
+		  </md-expansion-panel-expanded>
+		 
+		</md-expansion-panel>
+		
+		 <md-expansion-panel md-component-id="treatmentPanel">
+ 
+		  <md-expansion-panel-collapsed>
+		    <div class="md-title">Treatment History</div>
+		    <div class="md-summary"></div>
+		    <md-expansion-panel-icon></md-expansion-panel-icon>
+		  </md-expansion-panel-collapsed>
+		  <md-expansion-panel-expanded>
+		    <md-expansion-panel-header>
+		      <div class="md-title">Treatment History</div>
+		      <div class="md-summary">View general info</div>
+		      <md-expansion-panel-icon></md-expansion-panel-icon>
+		    </md-expansion-panel-header>
+		    <md-expansion-panel-content>
+		      <h4>General Info Content</h4>
+		      <p>Put content in here</p>
+		    </md-expansion-panel-content>
+		    <md-expansion-panel-footer>
+		      <div flex></div>
+		      <md-button class="md-warn" ng-click="$panel.collapse()">Collapse</md-button>
+		    </md-expansion-panel-footer>
+		 
+		  </md-expansion-panel-expanded>
+		 
+		</md-expansion-panel>
+	</md-expansion-panel-group>
 	</md-content>
 </div>
