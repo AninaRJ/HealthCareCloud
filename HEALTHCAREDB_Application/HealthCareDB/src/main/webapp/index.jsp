@@ -7,6 +7,7 @@
 	<meta name="google-signin-client_id" content="1035365942198-a6n1gvb87pdetflppdd1a2qav41lufsd.apps.googleusercontent.com">
 	<link rel="SHORTCUT ICON" href="<c:url value='/static/images/hccIcon.ico' />">
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+	<link rel="stylesheet" href="<c:url value='/static/css/md-expansion-panel.min.css' />">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.1/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.1/angular-messages.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
@@ -16,6 +17,7 @@
 	<!-- Google Script -->
 	<script src="<c:url value='/static/js/angular-googleapi.js' />"></script>
 	<script src="<c:url value='/static/js/moment.js' />"></script>
+	<script src="<c:url value='/static/js/md-expansion-panel.min.js' />"></script>
 		<script>
 	  function googleClientLoaded() {
 	    gapi.auth.init(function () { });
