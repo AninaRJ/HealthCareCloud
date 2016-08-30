@@ -1,5 +1,5 @@
 <div ng-controller="RegisterController">
-	<md-content>
+	<md-content style="overflow: hidden;">
 		<md-subheader class="md-primary md-accent">
 			<h2>Register a patient newly to the HealthCare Cloud</h2>
 		</md-subheader>

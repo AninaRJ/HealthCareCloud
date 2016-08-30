@@ -38,3 +38,24 @@ hccApp.controller("SearchController", ['$scope', '$rootScope', function($scope, 
 		$scope.detailPage = true;
 	}
 }]);
+
+hccApp.directive("generalInfo", function($rootScope){
+	return{
+		restrict: 'E',
+		templateUrl: $rootScope.contextRoot + 'static/templates/generalInfo.html'
+	}
+});
+
+hccApp.directive("medicalInfo", function($rootScope){
+	return{
+		restrict: 'E',
+		templateUrl: $rootScope.contextRoot + 'static/templates/medicalInfo.html'
+	}
+});
+
+hccApp.directive("treatmentHistory", function($rootScope){
+	return{
+		restrict: 'E',
+		templateUrl: $rootScope.contextRoot + 'static/templates/treatmentHistory.html'
+	}
+});

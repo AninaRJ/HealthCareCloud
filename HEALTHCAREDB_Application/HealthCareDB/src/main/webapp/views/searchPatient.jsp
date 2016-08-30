@@ -44,26 +44,25 @@
 	<md-content ng-show="detailPage">
 	<md-expansion-panel-group md-component-id="detailPanelGroup">
 		  
-		 <md-expansion-panel md-component-id="generalPanel">
+		 <md-expansion-panel md-component-id="generalPanel" class="md-primary">
  
-		  <md-expansion-panel-collapsed class=" md-primary">
-		    <div class="md-title">General Information</div>
-		    <div class="md-summary">Handles contact information too</div>
+		  <md-expansion-panel-collapsed md-colors="{background: 'default-accent-900-0.43'}">
+		    <div class="md-title" >General Information</div>
+		    <div class="md-summary" >Displays Patient's Name and Contact Information</div>
 		    <md-expansion-panel-icon></md-expansion-panel-icon>
 		  </md-expansion-panel-collapsed>
-		  <md-expansion-panel-expanded>
-		    <md-expansion-panel-header>
-		      <div class="md-title">General Information</div>
-		      <div class="md-summary">View general info</div>
+		  <md-expansion-panel-expanded md-colors="{background: 'default-background' }">
+		    <md-expansion-panel-header class="md-primary">
+		      <div class="md-title" >General Information</div>
+		      <div class="md-summary"></div>
 		      <md-expansion-panel-icon></md-expansion-panel-icon>
 		    </md-expansion-panel-header>
-		    <md-expansion-panel-content>
-		      <h4>General Info Content</h4>
-		      <p>Put content in here</p>
+		    <md-expansion-panel-content md-colors="{color: 'blue-900'}">
+		      <general-info></general-info>
 		    </md-expansion-panel-content>
 		    <md-expansion-panel-footer>
 		      <div flex></div>
-		      <md-button class="md-warn" ng-click="$panel.collapse()">Collapse</md-button>
+		      <md-button class="md-primary" ng-click="$panel.collapse()">Collapse</md-button>
 		    </md-expansion-panel-footer>
 		 
 		  </md-expansion-panel-expanded>
@@ -72,24 +71,23 @@
 		
 		 <md-expansion-panel md-component-id="medicalPanel">
  
-		  <md-expansion-panel-collapsed>
-		    <div class="md-title">Medical Information</div>
-		    <div class="md-summary"></div>
+		  <md-expansion-panel-collapsed md-colors="{background: 'default-accent-900-0.43'}">
+		    <div class="md-title" >Medical Information</div>
+		    <div class="md-summary" >Displays Patient's basic Medical Information (ex. Blood Group)</div>
 		    <md-expansion-panel-icon></md-expansion-panel-icon>
 		  </md-expansion-panel-collapsed>
-		  <md-expansion-panel-expanded>
+		  <md-expansion-panel-expanded md-colors="{background: 'default-background' }">
 		    <md-expansion-panel-header>
 		      <div class="md-title">Medical Information</div>
 		      <div class="md-summary">View general info</div>
 		      <md-expansion-panel-icon></md-expansion-panel-icon>
 		    </md-expansion-panel-header>
-		    <md-expansion-panel-content>
-		      <h4>General Info Content</h4>
-		      <p>Put content in here</p>
+		    <md-expansion-panel-content md-colors="{color: 'blue-900'}">
+		       <medical-info></medical-info>
 		    </md-expansion-panel-content>
 		    <md-expansion-panel-footer>
 		      <div flex></div>
-		      <md-button class="md-warn" ng-click="$panel.collapse()">Collapse</md-button>
+		      <md-button class="md-primary" ng-click="$panel.collapse()">Collapse</md-button>
 		    </md-expansion-panel-footer>
 		 
 		  </md-expansion-panel-expanded>
@@ -98,24 +96,23 @@
 		
 		 <md-expansion-panel md-component-id="treatmentPanel">
  
-		  <md-expansion-panel-collapsed>
+		  <md-expansion-panel-collapsed md-colors="{background: 'default-accent-900-0.43'}">
 		    <div class="md-title">Treatment History</div>
-		    <div class="md-summary"></div>
+		    <div class="md-summary" >Displays Patient's Treatment History grouped by Hospitals</div>
 		    <md-expansion-panel-icon></md-expansion-panel-icon>
 		  </md-expansion-panel-collapsed>
-		  <md-expansion-panel-expanded>
+		  <md-expansion-panel-expanded md-colors="{background: 'default-background' }">
 		    <md-expansion-panel-header>
 		      <div class="md-title">Treatment History</div>
 		      <div class="md-summary">View general info</div>
 		      <md-expansion-panel-icon></md-expansion-panel-icon>
 		    </md-expansion-panel-header>
-		    <md-expansion-panel-content>
-		      <h4>General Info Content</h4>
-		      <p>Put content in here</p>
+		    <md-expansion-panel-content md-colors="{color: 'blue-900'}">
+		      <treatment-history></treatment-history>
 		    </md-expansion-panel-content>
 		    <md-expansion-panel-footer>
 		      <div flex></div>
-		      <md-button class="md-warn" ng-click="$panel.collapse()">Collapse</md-button>
+		      <md-button class="md-primary" ng-click="$panel.collapse()">Collapse</md-button>
 		    </md-expansion-panel-footer>
 		 
 		  </md-expansion-panel-expanded>
