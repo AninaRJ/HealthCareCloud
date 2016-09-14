@@ -238,11 +238,6 @@
 			<version>1.5.1</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.microsoft</groupId>
-			<artifactId>sqljdbc</artifactId>
-			<version>1.0</version>
-		</dependency>
 	</dependencies>
 
 	<build>
