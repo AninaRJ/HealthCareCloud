@@ -2,11 +2,17 @@
  * http://usejsdoc.org/
  */
 
-hccApp.controller("SearchController", ['$scope', '$rootScope', function($scope, $rootScope){
+hccApp.controller("SearchController", ['$scope', '$rootScope', "SearchService", function($scope, $rootScope, SearchService){
 	$scope.detailPage = false;
 	$scope.currentNavItem = 'generalInfo';
 	
-	$scope.patientList = [
+	$scope.patient = {
+		id: '',
+		firstName: '',
+		lastName: ''
+	};
+	
+	/*$scope.patientList = [
 		{
 			id: 'pid_1',
 			name: 'Patient 1',
@@ -25,12 +31,18 @@ hccApp.controller("SearchController", ['$scope', '$rootScope', function($scope, 
 			summary: 'Summary 3',
 			history: 'History 3'
 		}	
-	];
+	];*/
 	
 	$scope.searchClicked = false;
 	
 	$scope.searchPatient = function(){
 		$scope.searchClicked = true;
+		SearchService.searchPatient($scope.patient).then(function(data){
+			console.log("Data returned successfully");
+			$scope.patientList = data;
+		}, function(errResponse){
+			console.log("Error")
+		})
 	}
 	
 	$scope.displayDetails = function(){
