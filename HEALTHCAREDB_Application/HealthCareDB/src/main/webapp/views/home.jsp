@@ -26,6 +26,7 @@
 	<script src="<c:url value='/static/app.js' />"></script>
 	<script src="<c:url value='/static/controller/calendar_controller.js' />"></script>
 	<script src="<c:url value='/static/controller/search_controller.js' />"></script>
+	<script src="<c:url value='/static/services/register_service.js' />"></script>
 	<script src="<c:url value='/static/controller/register_controller.js' />"></script>
 	<style>
 		.navBardemoBasicUsage md-content .ext-content {

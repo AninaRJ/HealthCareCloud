@@ -72,7 +72,7 @@
 	          </md-input-container>
 	          </div>
 	          <div layout-gt-sm="row">
-		        <md-button class="md-primary md-raised" ng-disabled="registerForm.$invalid" ng-click="searchPatient()">Register</md-button>
+		        <md-button class="md-primary md-raised" ng-disabled="registerForm.$invalid" ng-click="registerNew()">Register</md-button>
 		        <md-button class="md-primary md-raised" ng-click="clear()">Clear</md-button>
 		       </div>
 	        </div>
