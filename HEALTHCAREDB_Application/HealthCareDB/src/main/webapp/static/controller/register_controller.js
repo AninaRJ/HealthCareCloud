@@ -15,6 +15,7 @@ hccApp.controller("RegisterController", ["$scope", "RegisterService", function($
 	
 	$scope.clear = function(){
 		$scope.patient = {
+				patientId: 'hcc_123',
 				firstName: '',
 				lastName: '',
 				email: '',

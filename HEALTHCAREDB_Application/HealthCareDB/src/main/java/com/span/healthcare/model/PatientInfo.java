@@ -2,6 +2,7 @@ package com.span.healthcare.model;
 
 public class PatientInfo {
 
+	private String patientId;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -57,6 +58,12 @@ public class PatientInfo {
 	}
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
+	}
+	public String getPatientId() {
+		return patientId;
+	}
+	public void setPatientId(String patientId) {
+		this.patientId = patientId;
 	}
 	
 	
