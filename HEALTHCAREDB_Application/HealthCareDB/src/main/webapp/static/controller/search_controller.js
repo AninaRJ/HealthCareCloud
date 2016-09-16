@@ -2,7 +2,7 @@
  * http://usejsdoc.org/
  */
 
-hccApp.controller("SearchController", ['$scope', '$rootScope', "SearchService", function($scope, $rootScope, SearchService){
+hccApp.controller("SearchController", ['$scope', '$rootScope', "$mdDialog", "SearchService", function($scope, $rootScope, $mdDialog, SearchService){
 	$scope.detailPage = false;
 	$scope.currentNavItem = 'generalInfo';
 	
@@ -35,6 +35,22 @@ hccApp.controller("SearchController", ['$scope', '$rootScope', "SearchService", 
 			}
 		}else{
 			$scope.patientDetail = $scope.patientList[0];
+		}
+	}
+	
+	$scope.displayPopup= function(name){
+		if(name == 'allergy'){
+			$mdDialog.show({
+			      preserveScope: true,
+			      templateUrl: $rootScope.contextRoot + '/static/popups/allergyTemplate.html',
+			      parent: angular.element(document.body),
+			      clickOutsideToClose:false
+		    })
+		    .then(function(answer) {
+		      $scope.status = 'You said the information was "' + answer + '".';
+		    }, function() {
+		      $scope.status = 'You cancelled the dialog.';
+		    });
 		}
 	}
 }]);

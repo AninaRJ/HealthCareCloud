@@ -104,7 +104,7 @@
 		  <md-expansion-panel-expanded md-colors="{background: 'default-background' }">
 		    <md-expansion-panel-header>
 		      <div class="md-title">Treatment History</div>
-		      <div class="md-summary">View general info</div>
+		      <div class="md-summary">Displays history of treatment, problems, procedures.</div>
 		      <md-expansion-panel-icon></md-expansion-panel-icon>
 		    </md-expansion-panel-header>
 		    <md-expansion-panel-content md-colors="{color: 'blue-900'}">
