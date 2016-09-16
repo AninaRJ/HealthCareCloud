@@ -1,0 +1,54 @@
+{
+	"patients": [
+	             {
+	            	 "generalInfo": { 
+									"id": "pid_1", 
+									"name": "Ellen Ross", 
+									"gender": "Female", 
+									"maritalstatus": "Married", 
+									"summary": "Summary 1", 
+									"history": "History 1", 
+									"ethnicity": "Asian", 
+									"languages": "English, Hindi", 
+									"address" : "17 Daws Road, Portland, OR 97006", 
+									"phone": "415-555-1229", 
+									"dob" : "March 7, 1960",
+									"guardianName" : "Martha Shan",
+									"guardianRole": "Sister",
+									"guardianAddress" : "1357 Amber Drive, Beaverton, OR 97006",
+									"guardianPhone": "816-276-6909"
+						},
+					"medicalInfo": {
+						"providerName": "Ashby Medical Center", 
+						"address": "1002 Healthcare Dr, Portland, OR 97266", 
+						"phone": "415-555-1200", 
+						"allergies": [ {"name": "Penicillin", "reaction": "Hives", "severity": "Moderate to severe" }, 
+						               { "name": "Codeine", "reaction": "Shortness of Breath", "severity": "Moderate" }, 
+						               { "name": "Bee Stings", "reaction": "Anaphylactic Shock", "severity": "Severe" }],
+						"immunizations": [ { "date": "May 2001", "name": "Influenza virus vaccine, IM", "type": "Intramuscular injection", "comments": "Possible flu-like symptoms for three days" }, 
+						                   { "date": "April 2000", "name": "Tetanus and diphtheria toxoids, IM", "type": "Intramuscular injection", "doseQuantity": "50 / mcg", "comments": "Mild pain or soreness in the local area"}]
+					},
+					"treatmentHistory":{
+						"medication" : [{"date": "March 28, 2005", "type": "Liquid", "name": "Acetaminophen with codiene", "instructions": "2 puffs once a day", "doseQuantity": "2 / puffs", "rateQuantity": "1 / day", "prescriberName": "Ashby Medical Center"},
+						                {"date": "December 10, 2003", "type": "Tablet", "name": "Indomethacin", "instructions": "50mg bid with food", "doseQuantity": "50 / mg", "rateQuantity": "2 / day", "prescriberName": "Ashby Medical Center"}
+						                ],
+						                
+						"planOfCare" : [{"activityName": "Office consultation", "date": "May 28, 2007", "instructions": "Consultation with Dr. George Potomac for Asthma"},
+						                {"activityName": "Chest X-Ray", "date": "June 1, 2007", "instructions": ""},
+						                {"activityName": "Sputum Culture", "date": "May 28, 2007", "instructions": ""}
+						                ],
+						                
+						"encounters": [{"encounter": "ED Visit for Ankle Sprain", "providerName": "Dr. Henry Seven", "location": "Community Hospital", "date": "March 28, 2005"},
+						               {"encounter": "Gall Bladder Surgery", "providerName": "Dr. Bala Venktaraman", "location": "Ashby Medical Center", "date": "September 28, 2002"},
+						               {"encounter": "Labor and Delivery", "providerName": "Dr. Tiffany Martinez", "location": "Ashby Medical Center", "date": "March 21, 2002"},
+						               {"encounter": "ED Visit for Acute Cholecystitis", "providerName": "Dr. Tim Lee", "location": "Ashby Medical Center", "date": "October 28, 2001"}],
+						               
+						 "problemList": [{"observation": "Ankle Sprain", "status": "Active", "date": "March 28, 2005", "comments": "Slipped on ice and fell"},
+						                 {"observation": "Cholecystitis", "status": "Resolved", "date": "September 28, 2002", "comments": "Surgery postponed until after delivery"}],
+						                 
+						 "procedures": [{"name": "Laparoscopic Cholecystectomy", "date": "September 28, 2002", "provider": "Dr. Bala Venktaraman", "location": "Ashby Medical Center"},
+						                {"name": "Cesarian Section", "date": "March 22, 2002", "provider": "Dr. Tiffany Martinez", "location": "Ashby Medical Center"}]
+					}
+	             }
+	]
+}
