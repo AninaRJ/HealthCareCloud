@@ -12,42 +12,30 @@ hccApp.controller("SearchController", ['$scope', '$rootScope', "SearchService", 
 		lastName: ''
 	};
 	
-	/*$scope.patientList = [
-		{
-			id: 'pid_1',
-			name: 'Patient 1',
-			summary: 'Summary 1',
-			history: 'History 1'
-		},
-		{
-			id: 'pid_2',
-			name: 'Patient 2',
-			summary: 'Summary 2',
-			history: 'History 2'
-		},
-		{
-			id: 'pid_3',
-			name: 'Patient 3',
-			summary: 'Summary 3',
-			history: 'History 3'
-		}	
-	];*/
-	
 	$scope.searchClicked = false;
 	
 	$scope.searchPatient = function(){
 		$scope.searchClicked = true;
-		SearchService.searchPatient($scope.patient).then(function(data){
+		SearchService.searchPatientfromJSON().then(function(data){
 			console.log("Data returned successfully");
-			$scope.patientList = data;
+			$scope.patientList = data.patients;
 		}, function(errResponse){
 			console.log("Error")
 		})
 	}
 	
-	$scope.displayDetails = function(){
+	$scope.displayDetails = function(patientId){
 		// Display on basis of id
 		$scope.detailPage = true;
+		if($scope.patientList.length > 1){
+			for(var i =0; i <$scope.patientList.length; i++){
+				if($scope.patientList[i].id == patientId){
+					$scope.patientDetail = $scope.patientList[i];
+				}
+			}
+		}else{
+			$scope.patientDetail = $scope.patientList[0];
+		}
 	}
 }]);
 

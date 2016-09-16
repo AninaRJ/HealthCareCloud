@@ -21,6 +21,26 @@ hccApp.factory('SearchService', ['$http', '$q', '$rootScope', function($http, $q
                            return $q.reject(errResponse);
                        }
                );
+		},
+		
+		searchPatientfromJSON : function(){
+			 return $http({
+        		  method: 'GET',
+	      		  url: $rootScope.contextRoot + "static/json/patientInfo.json",
+	      		  headers: {
+	      			   'Content-Type': 'application/json',
+	      			   'Accept' : ''
+	      		  },
+	      		 dataType: 'json'
+      		}).then(
+                      function(response){
+                          return response.data;
+                      }, 
+                      function(errResponse){
+                          console.error('Error while fetching patient');
+                          return $q.reject(errResponse);
+                      }
+              );
 		}
 	}
 }]);

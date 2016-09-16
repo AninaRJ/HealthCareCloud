@@ -18,6 +18,9 @@ var hccApp = angular.module("hccApp", ['ngMessages', 'ngMaterial', 'googleApi', 
     .primaryPalette('blue')
     .accentPalette('deep-orange');
     
+    $mdThemingProvider.theme('dark-grey').backgroundPalette('blue-grey').dark();
+    $mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
+    
     $mdDateLocaleProvider.parseDate = function(dateString) {
 	    var m = moment(dateString, 'L', true);
 	    return m.isValid() ? m.toDate() : new Date(NaN);

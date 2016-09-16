@@ -1,12 +1,94 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<h2>Medication</h2>
+<md-card md-theme="dark-grey" md-theme-watch class="md-padding">
+	<md-list flex ng-repeat="medication in patientDetail.treatmentHistory.medication">
+	   <md-list-item class="md-2-line">
+	     <div class="md-list-item-text" layout="column">
+	       <h3><b>{{ medication.date }}</b></h3>
+	       <br/>
+	       <h3>{{ medication.name }}</h3>
+	       <h4>{{ medication.type }}</h4>
+	       <br/>
+	       <h4>{{ medication.instructions }}</h4>
+	       <h3>{{ medication.doseQuantity }}</h3>
+	       <h4>{{ medication.rateQuantity }}</h4>
+	      <h3><b>{{ medication.prescriberName }}</b></h3>
+	      <br/>
+	     </div>
+	   </md-list-item>
+	   <md-divider ></md-divider>
+	</md-list>
+	<md-card-actions layout="row" layout-align="end center">
+	  <md-button class="md-primary md-raised">Add Medication</md-button>
+	</md-card-actions>
+</md-card>
 
-</body>
-</html>
+<h2>Plan Of Care</h2>
+<md-card md-theme="dark-grey" md-theme-watch class="md-padding">
+	<md-list flex ng-repeat="plan in patientDetail.treatmentHistory.planOfCare">
+	   <md-list-item class="md-2-line">
+	     <div class="md-list-item-text" layout="column">
+	       <h3>{{ plan.activityName }}</h3>
+	       <h4>{{ plan.date }}</h4>
+	       <h3>{{ plan.instructions }}</h3>
+	     </div>
+	   </md-list-item>
+	   <md-divider ></md-divider>
+	</md-list>
+	<md-card-actions layout="row" layout-align="end center">
+	  <md-button class="md-primary md-raised">Add Plan Of Care</md-button>
+	</md-card-actions>
+</md-card>
+
+<h2>Encounters</h2>
+<md-card md-theme="dark-grey" md-theme-watch class="md-padding">
+	<md-list flex ng-repeat="encounter in patientDetail.treatmentHistory.encounters">
+	   <md-list-item class="md-2-line">
+	     <div class="md-list-item-text" layout="column">
+	       <h3>{{ encounter.encounter }}</h3>
+	       <h4>{{ encounter.providerName }}</h4>
+	       <h3>{{ encounter.location }}</h3>
+	       <h3>{{ encounter.date }}</h3>
+	     </div>
+	   </md-list-item>
+	   <md-divider ></md-divider>
+	</md-list>
+	<md-card-actions layout="row" layout-align="end center">
+	  <md-button class="md-primary md-raised">Add Encounter</md-button>
+	</md-card-actions>
+</md-card>
+
+<h2>Problem List</h2>
+<md-card md-theme="dark-grey" md-theme-watch class="md-padding">
+	<md-list flex ng-repeat="problem in patientDetail.treatmentHistory.problemList">
+	   <md-list-item class="md-2-line">
+	     <div class="md-list-item-text" layout="column">
+	       <h3>{{ problem.observation }}</h3>
+	       <h4>{{ problem.status }}</h4>
+	       <h3>{{ problem.date }}</h3>
+	       <h3>{{ problem.comments}}</h3>
+	     </div>
+	   </md-list-item>
+	     <md-divider ></md-divider>
+	</md-list>
+	<md-card-actions layout="row" layout-align="end center">
+	  <md-button class="md-primary md-raised">Add Problem</md-button>
+	</md-card-actions>
+</md-card>
+
+<h2>Procedures</h2>
+<md-card md-theme="dark-grey" md-theme-watch class="md-padding">
+	<md-list flex ng-repeat="procedure in patientDetail.treatmentHistory.procedures">
+	   <md-list-item class="md-2-line">
+	     <div class="md-list-item-text" layout="column">
+	       <h3>{{ procedure.name }}</h3>
+	       <h4>{{ procedure.date }}</h4>
+	       <h3>{{ procedure.provider }}</h3>
+	       <h3>{{ procedure.location }}</h3>
+	     </div>
+	   </md-list-item>
+	   <md-divider></md-divider>
+	</md-list>
+	<md-card-actions layout="row" layout-align="end center">
+	  <md-button class="md-primary md-raised">Add Procedure</md-button>
+	</md-card-actions>
+</md-card>

@@ -1,12 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<h2>Provider Information</h2>
+<md-card md-theme="dark-grey" md-theme-watch class="md-padding">
+	 <md-list flex>
+	   <md-list-item class="md-3-line">
+	     <div class="md-list-item-text" layout="column">
+	       <h3><b>{{ patientDetail.medicalInfo.providerName}}</b></h3>
+	       <h4>{{ patientDetail.medicalInfo.address }}</h4>
+	       <h3>{{ patientDetail.medicalInfo.phone}}</h3>
+	     </div>
+	   </md-list-item>
+	   <md-divider></md-divider>
+	</md-list>
+</md-card>
 
-</body>
-</html>
+<h2>Allergies</h2>
+<md-card md-theme="dark-grey" md-theme-watch class="md-padding">
+	<md-list flex ng-repeat="allergy in patientDetail.medicalInfo.allergies">
+	   <md-list-item class="md-3-line">
+	     <div class="md-list-item-text" layout="column">
+	       <h3><b>{{ allergy.name }}</b></h3>
+	       <h4>{{ allergy.reaction }}</h4>
+	       <h3>{{ allergy.severity }}</h3>
+	     </div>
+	   </md-list-item>
+	   <md-divider></md-divider>
+	</md-list>
+	<md-card-actions layout="row" layout-align="end center">
+	  <md-button class="md-primary md-raised">Add Allergy</md-button>
+	</md-card-actions>
+</md-card>
+
+<h2>Immunization</h2>
+<md-card md-theme="dark-grey" md-theme-watch class="md-padding">
+	<md-list flex ng-repeat="immun in patientDetail.medicalInfo.immunizations">
+	   <md-list-item class="md-3-line">
+	     <div class="md-list-item-text" layout="column">
+	       <h3>{{ immun.date }}</h3>
+	       <h4>{{ immun.type }}</h4>
+	       <h3>{{ immun.name }}</h3>
+	       <h3>{{ immun.doseQuantity }}</h3>
+	       <h4>{{ immun.comments }}</h4>
+	     </div>
+	   </md-list-item>
+	   <md-divider></md-divider>
+	</md-list>
+	<md-card-actions layout="row" layout-align="end center">
+	  <md-button class="md-primary md-raised">Add Immunization</md-button>
+	</md-card-actions>
+</md-card>

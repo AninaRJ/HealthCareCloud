@@ -28,10 +28,10 @@
 	        <md-list-item class="md-3-line" ng-repeat="patient in patientList" ng-click="null">
 	         <!--  <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" /> -->
 	          <div class="md-list-item-text" layout="column">
-	            <h3>{{patient.name}}</h3>
+	            <h3>{{patient.generalInfo.name}}</h3>
 	            <h4>{{patient.summary}}</h4>
 	            <p>{{patient.history}}</p>
-	             <md-button class="md-secondary md-warn" ng-click="displayDetails()">
+	             <md-button class="md-secondary md-warn" ng-click="displayDetails(patient.generalInfo.id)">
 				    View Details
 				  </md-button>
 	          </div>
@@ -46,7 +46,7 @@
 		  
 		 <md-expansion-panel md-component-id="generalPanel" class="md-primary">
  
-		  <md-expansion-panel-collapsed md-colors="{background: 'default-accent-900-0.43'}">
+		  <md-expansion-panel-collapsed md-colors="{background: 'default-primary'}">
 		    <div class="md-title" >General Information</div>
 		    <div class="md-summary" >Displays Patient's Name and Contact Information</div>
 		    <md-expansion-panel-icon></md-expansion-panel-icon>
@@ -71,7 +71,7 @@
 		
 		 <md-expansion-panel md-component-id="medicalPanel">
  
-		  <md-expansion-panel-collapsed md-colors="{background: 'default-accent-900-0.43'}">
+		  <md-expansion-panel-collapsed md-colors="{background: 'default-primary'}">
 		    <div class="md-title" >Medical Information</div>
 		    <div class="md-summary" >Displays Patient's basic Medical Information (ex. Blood Group)</div>
 		    <md-expansion-panel-icon></md-expansion-panel-icon>
@@ -79,7 +79,7 @@
 		  <md-expansion-panel-expanded md-colors="{background: 'default-background' }">
 		    <md-expansion-panel-header>
 		      <div class="md-title">Medical Information</div>
-		      <div class="md-summary">View general info</div>
+		      <div class="md-summary">Basic Medical Information</div>
 		      <md-expansion-panel-icon></md-expansion-panel-icon>
 		    </md-expansion-panel-header>
 		    <md-expansion-panel-content md-colors="{color: 'blue-900'}">
@@ -96,7 +96,7 @@
 		
 		 <md-expansion-panel md-component-id="treatmentPanel">
  
-		  <md-expansion-panel-collapsed md-colors="{background: 'default-accent-900-0.43'}">
+		  <md-expansion-panel-collapsed md-colors="{background: 'default-primary'}">
 		    <div class="md-title">Treatment History</div>
 		    <div class="md-summary" >Displays Patient's Treatment History grouped by Hospitals</div>
 		    <md-expansion-panel-icon></md-expansion-panel-icon>
