@@ -28,7 +28,7 @@
 	        <md-list-item class="md-3-line" ng-repeat="patient in patientList" ng-click="null">
 	         <!--  <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" /> -->
 	          <div class="md-list-item-text" layout="column">
-	            <h3>{{patient.generalInfo.name}}</h3>
+	            <h3>{{patient.generalInfo.firstName}} {{patient.generalInfo.lastName}}</h3>
 	            <h4>{{patient.summary}}</h4>
 	            <p>{{patient.history}}</p>
 	             <md-button class="md-secondary md-warn" ng-click="displayDetails(patient.generalInfo.id)">

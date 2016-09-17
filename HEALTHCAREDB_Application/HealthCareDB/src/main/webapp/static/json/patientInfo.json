@@ -3,7 +3,10 @@
 	             {
 	            	 "generalInfo": { 
 									"id": "pid_1", 
-									"name": "Ellen Ross", 
+									"firstName": "Ellen",
+									"lastName": "Ross",
+									"ssn": "1234567890",
+									"hccId": "HCC_7890",
 									"gender": "Female", 
 									"maritalstatus": "Married", 
 									"summary": "Summary 1", 
@@ -13,6 +16,7 @@
 									"address" : "17 Daws Road, Portland, OR 97006", 
 									"phone": "415-555-1229", 
 									"dob" : "March 7, 1960",
+									"email": "ellen.ross@gmail.com",
 									"guardianName" : "Martha Shan",
 									"guardianRole": "Sister",
 									"guardianAddress" : "1357 Amber Drive, Beaverton, OR 97006",

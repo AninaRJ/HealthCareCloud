@@ -6,26 +6,26 @@
       <div class="row">
       <md-input-container>
       	<label>Allergy Name:</label>
-        <input type="text">
+        <input type="text" ng-model="allergy.name">
       </md-input-container>
       </div>
       <div class="row">
       <md-input-container>
       	<label>Reaction:</label>
-        <input type="text">
+        <input type="text" ng-model="allergy.reaction">
       </md-input-container>
       </div>
       <div class="row">
       <md-input-container>
       	<label>Severity:</label>
-        <input type="text">
+        <input type="text" ng-model="allergy.severity">
       </md-input-container>
       </div>
       </div>
     </md-dialog-content>
     <md-dialog-actions layout="row">
-      <md-button class="md-primary md-raised" md-autofocus>Add</md-button>
-      <md-button class="md-primary md-raised">Cancel</md-button>
+      <md-button class="md-primary md-raised" md-autofocus ng-click="addAllergy(allergy)">Add</md-button>
+      <md-button class="md-primary md-raised" ng-click="closePopup()">Cancel</md-button>
     </md-dialog-actions>
   </form>
 </md-dialog>

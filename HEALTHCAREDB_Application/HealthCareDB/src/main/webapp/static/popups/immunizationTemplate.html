@@ -1,0 +1,43 @@
+<md-dialog layout='column'>
+  <form ng-cloak>
+  <md-subheader><h2>Add Immunization</h2></md-subheader>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+      <div class="row">
+      <md-input-container>
+      	<label>Date:</label>
+        <input type="text" ng-model="immu.date">
+      </md-input-container>
+      </div>
+      <div class="row">
+      <md-input-container>
+      	<label>Name:</label>
+        <input type="text" ng-model="immu.name">
+      </md-input-container>
+      </div>
+      <div class="row">
+      <md-input-container>
+      	<label>Type:</label>
+        <input type="text" ng-model="immu.type">
+      </md-input-container>
+      </div>
+       <div class="row">
+      <md-input-container>
+      	<label>Dosage:</label>
+        <input type="text" ng-model="immu.doseQuantity"/>
+      </md-input-container>
+      </div>
+      <div class="row">
+      <md-input-container>
+      	<label>Comments:</label>
+        <input type="textarea" ng-model="immu.comments">
+      </md-input-container>
+      </div>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button class="md-primary md-raised" md-autofocus ng-click="addImmunization(immu)">Add</md-button>
+      <md-button class="md-primary md-raised" ng-click="closePopup()">Cancel</md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
